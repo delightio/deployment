@@ -26,7 +26,7 @@ xcodebuild -target gesturedrawer -configuration Release -sdk macosx10.7 clean bu
 echo "Stopping daemon..."
 sudo launchctl unload /Library/LaunchDaemons/com.pipely.DelightVideoProcessor.plist || { echo "Stopping daemon failed, aborting"; exit 2; }
 mkdir -p /usr/local/backup/gesturedrawer
-mv /usr/local/bin/gesturedrawer /usr/local/backup/gesturedrawer/gesturedrawer_`date '+%Y-%m-%d-%H%M%S'`
+mv /usr/local/bin/gesturedrawer /usr/local/backup/gesturedrawer/gesturedrawer_`date '+%Y-%m-%d_%H:%M:%S'`
 mv build/Release/gesturedrawer /usr/local/bin/
 chown delight:staff /usr/local/bin/gesturedrawer
 echo "Starting daemon..."
