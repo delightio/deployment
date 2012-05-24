@@ -8,7 +8,7 @@ if [ "$USER" != "delight" ] ; then
 	exit 1
 fi
 
-web_branch=${1-master}
+web_branch=${1-staging}
 draw_branch=${2-master}
 
 # Get the latest code
