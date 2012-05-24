@@ -1,6 +1,6 @@
 #!/bin/sh
 # This script builds and deploys the latest version of the gesturedrawer.
-# Usage: deploy_gesturedrawer <delight.web branch> <gesturedrawer branch>
+# Usage: deploy_gesturedrawer.sh <delight.web branch> <gesturedrawer branch>
 
 # Check that user is delight since it messes up permissions otherwise
 if [ "$USER" != "delight" ] ; then
@@ -30,6 +30,6 @@ mv /usr/local/bin/gesturedrawer /usr/local/backup/gesturedrawer/gesturedrawer_`d
 mv build/Release/gesturedrawer /usr/local/bin/
 chown delight:staff /usr/local/bin/gesturedrawer
 echo "Starting daemon..."
-sudo launchctl load /Library/LaunchDaemons/com.pipely.DelightVideoProcessor.plist
+sudo launchctl load /Library/LaunchDaemons/com.pipely.DelightVideoProcessor.plist || { echo "Starting daemon failed. That's not good!"; exit 2; }
 echo "Success!"
 
