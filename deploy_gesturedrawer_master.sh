@@ -14,7 +14,7 @@ draw_branch=${2-master}
 cd /Users/delight/code/delight.web
 git checkout $web_branch || { echo "can't switch to delight.web branch $web_branch"; exit 2; }
 git pull || { echo "git pull failed, aborting"; exit 2; }
-bundle install || {echo "bundle install failed, aborting"; exit 2; }
+bundle install || { echo "bundle install failed, aborting"; exit 2; }
 
 cd /Users/delight/code/gesturedraw
 git checkout $draw_branch || { echo "can't switch to gesturedrawer branch $draw_branch"; exit 2; }
