@@ -16,9 +16,7 @@ git checkout $web_branch || { echo "can't switch to delight.web branch $web_bran
 git pull || { echo "git pull failed, aborting"; exit 2; }
 
 # bundle install
-bash
 bundle install || { echo "bundle install failed, aborting"; exit 2; }
-exit
 
 cd /Users/delight/code/gesturedraw
 git checkout $draw_branch || { echo "can't switch to gesturedrawer branch $draw_branch"; exit 2; }
