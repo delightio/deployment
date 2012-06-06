@@ -18,6 +18,9 @@ git pull || { echo "git pull failed, aborting"; exit 2; }
 # bundle install
 bundle install || { echo "bundle install failed, aborting"; exit 2; }
 
+# run db migration
+rake db:migrate || { echo "rake db:migrate failed, aborting"; exit 2; }
+
 cd /Users/delight/code/gesturedraw
 git checkout $draw_branch || { echo "can't switch to gesturedrawer branch $draw_branch"; exit 2; }
 git pull || { echo "git pull failed, aborting"; exit 2; }
