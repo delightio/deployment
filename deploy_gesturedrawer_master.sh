@@ -27,6 +27,7 @@ git pull || { echo "git pull failed, aborting"; exit 2; }
 
 # Build it
 xcodebuild -target gesturedrawer -configuration Release -sdk macosx10.7 clean build || { echo "Build failed, aborting"; exit 2; }
+xcodebuild -target majororientation -configuration Release -sdk macosx10.7 clean build || { echo "Build failed, aborting"; exit 2; }
 
 # Make backup of old gesturedrawer and deploy the new one
 echo "Stopping daemon..."
@@ -35,6 +36,10 @@ mkdir -p /usr/local/backup/gesturedrawer
 mv /usr/local/bin/gesturedrawer /usr/local/backup/gesturedrawer/gesturedrawer_`date '+%Y-%m-%d_%H:%M:%S'`
 mv build/Release/gesturedrawer /usr/local/bin/
 chown delight:staff /usr/local/bin/gesturedrawer
+# major orientation
+mv /usr/local/bin/majororientation /usr/local/backup/gesturedrawer/majororientation_`date '+%Y-%m-%d_%H:%M:%S'`
+mv build/Release/majororientation /usr/local/bin/
+chown delight:staff /usr/local/bin/majororientation
 echo "Starting daemon..."
 sudo launchctl load /Library/LaunchDaemons/com.pipely.DelightVideoProcessor.plist || { echo "Starting daemon failed. That's not good!"; exit 2; }
 echo "Success!"
