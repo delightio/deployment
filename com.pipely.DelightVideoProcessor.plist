@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UserName</key>
+	<string>delight</string>	
+	<key>Label</key>
+	<string>com.pipely.DelightVideoProcessor</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/delight/code/delight.web</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/delight/.rvm/gems/ruby-1.9.3-p194/bin/foreman</string>
+		<string>start</string>
+		<string>-c</string>
+		<string>video=2</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>StandardOutPath</key>
+	<string>/var/log/delight/video.log</string>
+	<key>StandardErrorPath</key>
+	<string>/var/log/delight/video_error.log</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>GEM_HOME</key>
+		<string>/Users/delight/.rvm/gems/ruby-1.9.3-p194</string>
+		<key>GEM_PATH</key>
+		<string>/Users/delight/.rvm/gems/ruby-1.9.3-p194:/Users/delight/.rvm/gems/ruby-1.9.3-p194@global</string>
+		<key>MY_RUBY_HOME</key>
+		<string>/Users/delight/.rvm/rubies/ruby-1.9.3-p194</string>
+		<key>rvm_path</key>
+		<string>/Users/delight/.rvm</string>
+		<key>rvm_bin_path</key>
+		<string>/Users/delight/.rvm/bin</string>
+		<key>rvm_prefix</key>
+		<string>/Users/delight</string>
+		<key>RUBY_VERSION</key>
+		<string>ruby-1.9.3-p194</string>
+		<key>PATH</key>
+		<string>/Users/delight/.rvm/gems/ruby-1.9.3-p194/bin:/Users/delight/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/delight/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/delight/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin</string>
+	</dict>
+</dict>
+</plist>
+

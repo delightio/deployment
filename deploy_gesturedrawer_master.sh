@@ -36,6 +36,8 @@ mkdir -p /usr/local/backup/gesturedrawer
 mv /usr/local/bin/gesturedrawer /usr/local/backup/gesturedrawer/gesturedrawer_`date '+%Y-%m-%d_%H:%M:%S'`
 mv build/Release/gesturedrawer /usr/local/bin/
 chown delight:staff /usr/local/bin/gesturedrawer
+sudo cp com.pipely.DelightVideoProcessor.plist /Library/LaunchDaemons/
+
 # major orientation
 mv /usr/local/bin/majororientation /usr/local/backup/gesturedrawer/majororientation_`date '+%Y-%m-%d_%H:%M:%S'`
 mv build/Release/majororientation /usr/local/bin/
