@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UserName</key>
-	<string>delight</string>	
+	<string>delight</string>
 	<key>Label</key>
 	<string>com.pipely.DelightVideoProcessor</string>
 	<key>WorkingDirectory</key>
@@ -13,7 +13,7 @@
 		<string>/Users/delight/.rvm/gems/ruby-1.9.3-p194/bin/foreman</string>
 		<string>start</string>
 		<string>-c</string>
-		<string>video=2</string>
+		<string>video=10</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
