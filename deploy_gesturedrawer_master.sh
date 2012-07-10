@@ -13,13 +13,19 @@ draw_branch=${2-master}
 # Get the latest code
 cd /Users/delight/code/delight.web
 git checkout $web_branch || { echo "can't switch to delight.web branch $web_branch"; exit 2; }
-git pull || { echo "git pull failed, aborting"; exit 2; }
+git pull || { echo "delight.web: git pull failed, aborting"; exit 2; }
 
 # bundle install
-bundle install || { echo "bundle install failed, aborting"; exit 2; }
+bundle install || { echo "delight.web: bundle install failed, aborting"; exit 2; }
 
 # run db migration
-rake db:migrate || { echo "rake db:migrate failed, aborting"; exit 2; }
+rake db:migrate || { echo "delight.web: rake db:migrate failed, aborting"; exit 2; }
+
+# qtrotate
+cd /Users/delight/code/qtrotate
+git pull || { echo "qtrotate: git pull failed, aborting"; exit 2; }
+cp qtrotate.py /usr/local/bin/
+chown delight:staff /usr/local/bin/qtrotate.py
 
 cd /Users/delight/code/gesturedraw
 git checkout $draw_branch || { echo "can't switch to gesturedrawer branch $draw_branch"; exit 2; }
