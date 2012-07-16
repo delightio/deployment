@@ -27,6 +27,17 @@ git pull || { echo "qtrotate: git pull failed, aborting"; exit 2; }
 cp qtrotate.py /usr/local/bin/
 chown delight:staff /usr/local/bin/qtrotate.py
 
+# Build JSON converters
+cd /Users/delight/code/jsonconverters
+git pull || { echo "jsonconverters: git pull failed, aborting"; exit 2; }
+xcodebuild -target touchconvert -configuration Release -sdk macosx10.7 clean build || { echo "Build failed, aborting"; exit 2; }
+xcodebuild -target eventconvert -configuration Release -sdk macosx10.7 clean build || { echo "Build failed, aborting"; exit 2; }
+mkdir -p /usr/local/backup/jsonconverters
+mv /usr/local/bin/touchconvert /usr/local/backup/jsonconverters/touchconvert_`date '+%Y-%m-%d_%H:%M:%S'`
+mv /usr/local/bin/eventconvert /usr/local/backup/jsonconverters/eventconvert_`date '+%Y-%m-%d_%H:%M:%S'`
+mv build/Release/touchconvert /usr/local/bin
+mv build/Release/eventconvert /usr/local/bin
+
 cd /Users/delight/code/gesturedraw
 git checkout $draw_branch || { echo "can't switch to gesturedrawer branch $draw_branch"; exit 2; }
 git pull || { echo "git pull failed, aborting"; exit 2; }
