@@ -19,7 +19,7 @@ git pull || { echo "delight.web: git pull failed, aborting"; exit 2; }
 bundle install || { echo "delight.web: bundle install failed, aborting"; exit 2; }
 
 # run db migration
-rake db:migrate || { echo "delight.web: rake db:migrate failed, aborting"; exit 2; }
+bundle exec rake db:migrate || { echo "delight.web: bundle exec rake db:migrate failed, aborting"; exit 2; }
 
 # qtrotate
 cd /Users/delight/code/qtrotate
